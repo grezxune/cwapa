@@ -1,0 +1,15 @@
+.content-container {
+    padding: $m-size;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    @include fade-in();
+}
+
+.content-container--page {
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}

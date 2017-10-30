@@ -1,0 +1,24 @@
+.news-item {
+    background: $main-color;
+    margin: $s-size;
+    border-radius: 6px;
+    border: 1px solid $main-color;
+    color: $off-white;
+    width: 80rem;
+    
+    @include box-shadow();
+    @include pressable();
+}
+
+.news-item__title {
+    text-align: center;
+    margin: 0 $s-size;
+    border-bottom: 2px solid $off-white;
+    font-family: $subheader-font;
+    font-size: $font-size-large;
+}
+
+.news-item__content {
+    margin: $s-size;
+    word-wrap: break-word;
+}

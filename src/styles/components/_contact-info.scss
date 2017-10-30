@@ -1,0 +1,38 @@
+.contact-info {
+    font-family: $subheader-font;
+}
+
+.contact-info__section {
+    margin: $l-size;
+}
+
+.contact-info__person {
+    margin: $m-size 0;
+    background: $main-color;
+    padding: $s-size;
+    color: $off-white;
+    border-radius: 5px;
+
+    @include pressable();
+}
+
+.contact-info__division {
+    margin: 0 $s-size;
+}
+
+.contact-info__icon {
+    margin-right: $s-size;
+}
+
+.contact-info__link {
+    color: $off-white;
+    text-decoration: none;
+    border-bottom: 1px solid $off-white;
+}
+
+.contact-info__section__header {
+    font-family: $header-font;
+    font-weight: bold;
+    font-size: $font-size-large;
+    margin: $m-size 0;
+}
