@@ -1,10 +1,20 @@
 @mixin pressable() {
     transition-property: box-shadow;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     @include box-shadow();
 
     &:hover {
-        box-shadow: 1px 1px 2px 2px rgba($accent-color-rgb, 0.8);
+        box-shadow: 1px 1px 2px 2px rgba(71, 71, 71, 0.8);
+    }
+}
+
+@mixin pressable-white() {
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    @include box-shadow(1px, 1px, 3px, 1px, rgba($off-white, 1));
+
+    &:hover {
+        box-shadow: 3px 3px 5px 2px rgba($off-white, 0.8);
     }
 }
 

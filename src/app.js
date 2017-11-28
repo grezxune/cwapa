@@ -1,16 +1,22 @@
+import './config/config';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppRouter, { history } from './routers/app-router';
-import configureStore from './store/configure-store';
-import { login, logout } from './actions/auth';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-// import { firebase } from './firebase/firebase';
+
+import AppRouter, { history } from './routers/app-router';
+import configureStore from './store/configure-store';
+import { login, logout } from './actions/auth';
 import LoadingPage from './components/loading-page';
+import customAxios from './network/axios';
+import checkIfLoggedIn from './authorization/check-if-logged-in';
+
+// import { firebase } from './firebase/firebase';
 
 const store = configureStore();
 
@@ -33,7 +39,20 @@ ReactDOM.render(
     document.getElementById('app')
 );
 
-renderApp();
+const checkForUser = async () => {
+    const payload = await checkIfLoggedIn();
+
+    if (payload.loggedIn) {
+        store.dispatch(login(payload.id));
+    } else {
+        store.dispatch(logout());
+    }
+
+    renderApp();
+    history.push('/');
+}
+
+checkForUser();
 
 // firebase.auth().onAuthStateChanged((user) => {
 //     if (user) {

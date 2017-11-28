@@ -54,13 +54,17 @@ module.exports = (env, argv) => {
                 'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
                 'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
                 'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
-            })
+            }),
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true,
-            publicPath: '/dist/'
-        }
+            publicPath: '/dist/',
+        },
+        node: {
+            dns: 'mock',
+            net: 'mock'
+        },
     }
 };

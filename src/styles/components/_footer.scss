@@ -1,0 +1,33 @@
+.footer {
+    background: $main-color;
+    font-family: $header-font;
+    width: 100%;
+    color: $off-white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: $s-size;
+    margin-top: $m-size;
+
+    @include inset-box-shadow();
+
+    > * {
+        margin: $s-size;
+        @include fade-in();
+    }
+}
+
+.footer__social-links {
+    a {
+        margin: 0 $s-size;
+        background: $off-white;
+        color: $main-color;
+        border-radius: 5px;
+        text-align: center;
+
+        i {
+            width: 25px;
+        }
+    }
+}

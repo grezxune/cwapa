@@ -2,7 +2,7 @@ import React from 'react';
 import ContactInfo from './contact-info';
 
 const ContactPage = (prop) => (
-    <div className="content-container">
+    <div className="content-container content-container--page">
         <div className="contact-info">
             <div className="contact-info__section">
                 <div className="contact-info__section__header">
@@ -11,11 +11,11 @@ const ContactPage = (prop) => (
                 <ContactInfo
                     name="Jeanna Diedrich"
                     phone="715-323-1554"
-                    email="jeanna.j.diedrich@gmail.com" />
+                    email="jdiedrich@apaleagues.com" />
                 <ContactInfo
                     name="Tommy Treb"
                     phone="715-321-1583"
-                    email="tomtrezb2003@gmail.com" />
+                    email="ttreb@apaleagues.com" />
             </div>
             <div className="contact-info__section">
                 <div className="contact-info__section__header">

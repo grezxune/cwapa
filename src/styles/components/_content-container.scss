@@ -1,10 +1,13 @@
 .content-container {
-    padding: $m-size;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
 
     @include fade-in();
+
+    @media (max-width: $desktop-breakpoint) {
+        width: 100%;
+    }
 }
 
 .content-container--page {
@@ -12,4 +15,12 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.content-container--page--toggle {
+    justify-content: center;
+
+    @media (max-width: $desktop-breakpoint) {
+        flex-flow: column nowrap;
+    }
 }

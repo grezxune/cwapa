@@ -1,20 +1,32 @@
 .button {
-    background: $light-blue;
+    background: $off-white;
     border: none;
     border-radius: 1px;
-    color: white;
+    color: $main-color;
     display: inline-block;
     font-size: $font-size-large;
     font-weight: 300;
     line-height: 1;
     padding: $s-size;
     text-decoration: none;
+    margin: 5px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .button--link {
+    color: $off-white;
     background: none;
 }
 
 .button--secondary {
-    background: #888888;
+    background: $main-color;
+    color: $off-white;
+}
+
+.button--danger {
+    background: $accent-color;
+    color: white;
 }

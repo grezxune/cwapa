@@ -14,3 +14,24 @@
     @extend .text-input;
     height: 10rem;
 }
+
+input[type="checkbox"] {
+    cursor: pointer;
+    -moz-appearance: none;
+    -ms-progress-appearance: none;
+    -webkit-appearance: none;
+    padding: $s-size;
+    border-radius: 4px;
+    background: $off-white;
+    color: $main-color;
+    width: $s-size !important;
+    height: $s-size;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]:checked:after {
+    content: '\2714';
+}

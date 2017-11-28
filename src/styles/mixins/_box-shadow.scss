@@ -2,6 +2,13 @@
                   $offset-y: 5px,
                   $blur-radius: 10px,
                   $spread-radius: 2px,
-                  $color: rgba($accent-color-rgb, 1)) {
+                  $color: rgba(71, 71, 71, 1)) {
     box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
+}
+
+@mixin inset-box-shadow($offset-x: 0,
+                        $offset-y: 0,
+                        $blur-radius: 20px,
+                        $color: rgba(71, 71, 71, 1)) {
+    box-shadow: inset $offset-x $offset-y $blur-radius $color;
 }

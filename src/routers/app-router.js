@@ -3,11 +3,18 @@ import {Router, Route, Switch} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import HomePage from '../components/home-page';
 import NotFoundPage from '../components/not-found-page';
-import LoginPage from '../components/login-page';
-import EventsPage from '../components/events-page';
-import NewsPage from '../components/news-page';
+import EventsPage from '../components/events/events-page';
+import NewsPage from '../components/news/news-page';
 import FormsPage from '../components/forms-page';
-import ContactPage from '../components/contact-page';
+import ContactPage from '../components/contact/contact-page';
+import LoginPage from '../components/login-page';
+import AdminPage from '../components/admin-page';
+import PlayersListPage from '../components/players/players-list-page';
+import PlayerForm from '../components/players/player-form';
+import AddPlayerPage from '../components/players/add-player-page';
+import EditPlayerPage from '../components/players/edit-player-page';
+import TeamsListPage from '../components/teams/teams-list-page';
+
 import PrivateRoute from './private-route';
 import PublicRoute from './public-route';
 
@@ -22,7 +29,14 @@ const AppRouter = () => (
                 <PublicRoute path="/news" component={NewsPage} />
                 <PublicRoute path="/forms" component={FormsPage} />
                 <PublicRoute path="/contact" component={ContactPage} />
-                <PrivateRoute path="/dashboard" component={HomePage} />
+                <PublicRoute path="/login" component={LoginPage} />
+                <PublicRoute path="/player/add" component={AddPlayerPage} />
+                <PublicRoute path="/player/:id" component={EditPlayerPage} />
+                
+                <PrivateRoute path="/admin" component={AdminPage} />
+                <PrivateRoute path="/players" component={PlayersListPage} />
+                <PrivateRoute path="/teams" component={TeamsListPage} />
+
                 <Route component={NotFoundPage} />
             </Switch>
         </div>

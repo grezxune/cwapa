@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 export const PrivateRoute = ({
     isAuthenticated,
@@ -13,10 +14,10 @@ export const PrivateRoute = ({
     component={(props) => (
         isAuthenticated ? (
             <div className="page-layout">
-                <div className="banner-image"></div>
                 <div className="page-layout__right-side">
                     <Header />
                     <Component {...props} />
+                    <Footer />
                 </div>
             </div>
         ) : (
@@ -26,7 +27,7 @@ export const PrivateRoute = ({
 );
 
 const mapStateToProps = (state) => ({
-    isAuthenticated: !!state.auth.uid
+    isAuthenticated: !!state.auth.id
 });
 
 export default connect(mapStateToProps)(PrivateRoute);
