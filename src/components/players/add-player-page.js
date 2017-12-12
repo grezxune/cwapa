@@ -8,21 +8,18 @@ class AddPlayerPage extends React.Component {
         super(props);
     }
 
-    addPlayer = async (playerForm) => {
+    addPlayer = async (player) => {
+        let submitResponse;
         try {
-            const submitResponse = await customAxios.post('/player', playerForm.player);
+            submitResponse = await customAxios.post('/player', player);
 
-            console.log('State sent to post:\n', playerForm.player);
-            console.log('Player Post Response:\n', submitResponse);
             if (submitResponse && submitResponse.status === 200) {
                 history.push('/');
-                console.log('Success submitting player!!');
-            } else {
-                console.log('Error submitting player');
             }
         } catch (err) {
-            console.log('Error submitting player\n', err);
         }
+
+        return submitResponse;
     };
 
     render() {

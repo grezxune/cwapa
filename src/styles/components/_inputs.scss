@@ -34,4 +34,10 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked:after {
     content: '\2714';
+    width: 20px;
+    height: 20px;
+}
+
+.SingleDatePickerInput {
+    border-radius: 5px;
 }
