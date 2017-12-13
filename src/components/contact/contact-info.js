@@ -11,12 +11,12 @@ const ContactInfo = (props) => (
             </div>
         ) }
         { props.phone && (
-            <div className="contact-info__phone">
+            <div className="contact-info__link-container">
                 <a className="contact-info__link" href={"tel:" + props.phone}><i className="contact-info__icon fa fa-phone" />{props.phone}</a>
             </div>
         ) }
         { props.email && (
-            <div className="contact-info__email">
+            <div className="contact-info__link-container">
                 <a className="contact-info__link" href={"mailto:" + props.email}><i className="contact-info__icon fa fa-envelope" />{props.email}</a>
             </div>
         ) }

@@ -16,7 +16,6 @@ const checkIfLoggedIn = async () => {
             };
         }
     } catch (err) {
-        console.log('Error checking for user\n', err);
     }
 
     return payload;

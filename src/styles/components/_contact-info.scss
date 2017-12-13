@@ -16,6 +16,11 @@
     @include pressable();
 }
 
+.contact-info__name {
+    text-align: center;
+    @include rounded-underline();
+}
+
 .contact-info__division {
     margin: 0 $s-size;
 }
@@ -28,6 +33,10 @@
     color: $off-white;
     text-decoration: none;
     border-bottom: 1px solid $off-white;
+}
+
+.contact-info__link-container {
+    margin: $s-size 0px;
 }
 
 .contact-info__section__header {

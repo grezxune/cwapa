@@ -11,6 +11,7 @@ class AdminPage extends React.Component {
             <div className="content-container content-container--page">
                 <Link to="/players">Players</Link>
                 <Link to="/teams">Teams</Link>
+                <Link to="/news-item/add">Add News Item</Link>
             </div>
         );
     }

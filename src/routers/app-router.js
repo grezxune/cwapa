@@ -15,6 +15,8 @@ import AddPlayerPage from '../components/players/add-player-page';
 import EditPlayerPage from '../components/players/edit-player-page';
 import TeamsListPage from '../components/teams/teams-list-page';
 
+import AddNewsItemPage from '../components/news/add-news-item-page';
+
 import PrivateRoute from './private-route';
 import PublicRoute from './public-route';
 
@@ -36,6 +38,7 @@ const AppRouter = () => (
                 <PrivateRoute path="/admin" component={AdminPage} />
                 <PrivateRoute path="/players" component={PlayersListPage} />
                 <PrivateRoute path="/teams" component={TeamsListPage} />
+                <PrivateRoute path="/news-item/add" component={AddNewsItemPage} />
 
                 <Route component={NotFoundPage} />
             </Switch>

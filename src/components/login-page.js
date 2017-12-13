@@ -48,6 +48,7 @@ const FormikLogin = withFormik({
     handleSubmit: async (values, { resetForm, setErrors, setSubmitting }) => {
         try {
             const loginResponse = await customAxios.post('/login', { email: values.email, password: values.password });
+            setSubmitting(false);
 
             if (loginResponse && loginResponse.status === 200) {
                 values.login(loginResponse.data.user._id);
@@ -57,8 +58,6 @@ const FormikLogin = withFormik({
             }
         } catch (err) {
             setErrors({ loginError: 'Email or password is incorrect' });
-        } finally {
-            setSubmitting(false);
         }
     }
 })(LoginPage);

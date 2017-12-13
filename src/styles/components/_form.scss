@@ -24,8 +24,7 @@
     font-size: $font-size-xlarge;
     width: 100%;
     margin: 0px $s-size $m-size $s-size;
-    border-bottom: 2px solid $off-white;
-    border-radius: 15px;
+    @include rounded-underline();
 }
 
 .form__fieldset-subtitle {
