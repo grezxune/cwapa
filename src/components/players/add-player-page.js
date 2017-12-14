@@ -17,6 +17,9 @@ class AddPlayerPage extends React.Component {
                 history.push('/');
             }
         } catch (err) {
+            if (err.response.data && err.response.data.errors) {
+                return { errors: err.response.data.errors };
+            }
         }
 
         return submitResponse;

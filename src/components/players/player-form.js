@@ -3,6 +3,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { withFormik, Form, Field } from 'formik';
 import Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import customAxios from '../../network/axios';
 import NameInputs from './name-inputs';
@@ -11,6 +12,7 @@ import AddressInputs from './address-inputs';
 import PersonalInputs from './personal-inputs';
 import PreviousPlayInputs from './previous-play-inputs';
 import FriendInterestedInputs from './friend-interested-inputs';
+import ErrorToast from '../error-toast';
 
 import 'formik/dist/formik';
 
@@ -48,38 +50,7 @@ const PlayerForm = ({ player, values, errors, touched, isSubmitting, handleChang
 }
 
 const FormikPlayerForm = withFormik({
-    // validate: (values, props) => {
-    //     const errors = {};
-
-    //     if ((!values.contact.phones.cell.number || !values.contact.phones.cell.isPrimary) &&
-    //         (!values.contact.phones.home.number || !values.contact.phones.home.isPrimary) &&
-    //         (!values.contact.phones.work.number || !values.contact.phones.work.isPrimary)) {
-    //         errors.customContact = { phones: 'At least one primary phone required'};
-    //     }
-
-    //     const today = moment();
-    //     const birthdate = moment(values.personal.birthdate);
-    //     const difference = today.diff(birthdate, 'years');
-
-    //     if (birthdate.isValid() && difference < 12) {
-    //         errors.customPersonal = { birthdate: 'You must be at least 12 years old to sign up for the APA'};
-    //     } else if (!birthdate.isValid()) {
-    //         // errors.personal = { birthdate: 'Birthdate is required' };
-    //     }
-
-    //     console.log('Errors from validation: ', errors);
-    //     return errors;
-    // },
     mapPropsToValues({ player }) {
-        console.log('Player in PlayerForm-2!: ', player);
-            const name = player && player.name ? player.name : {
-                first: '',
-                middle: '',
-                last: '',
-                nickname: ''
-            };
-
-        console.log('NAME: ', name);
         return {
             name: player && player.name ? player.name : {
                 first: '',
@@ -159,6 +130,12 @@ const FormikPlayerForm = withFormik({
                     number: Yup.string(),
                     ext: Yup.string()
                 })
+            }).test('onePrimaryRequired', 'At least one primary phone required', (phones, schema) => {
+                const hasAtLeastOnePrimaryPhone = ((phones.cell.number && phones.cell.isPrimary) ||
+                                                   (phones.home.number && phones.home.isPrimary) ||
+                                                   (phones.work.number && phones.work.isPrimary));
+
+                return hasAtLeastOnePrimaryPhone;
             })
         }),
         address: Yup.object().shape({
@@ -168,7 +145,17 @@ const FormikPlayerForm = withFormik({
             zipCode: Yup.string().required('Zip Code is required')
         }),
         personal: Yup.object().shape({
-            birthdate: Yup.string('Birthdate is required').nullable().required('Birthdate is required'),
+            birthdate: Yup.number().nullable().required('Birthdate is required')
+            .test('MinAge',
+                    'You must be at least 12 years of age to sign up for the APA',
+                    (birthdate, schema) => {
+                        const today = moment();
+                        const currentBirthdate = moment(birthdate);
+                        const difference = today.diff(currentBirthdate, 'years');
+
+                        return currentBirthdate.isValid() && difference >= 12;
+                    }
+            ),
             gender: Yup.string(),
             legalStatus: Yup.string(),
             employment: Yup.object().shape({
@@ -194,9 +181,11 @@ const FormikPlayerForm = withFormik({
     handleSubmit: async (values, { props, resetForm, setErrors, setSubmitting }) => {
         const response = await props.onSubmit(values);
 
-        if (!response) {
+        if (response && response.errors) {
             setSubmitting(false);
-            setErrors({ request: 'There was a problem submitting player' });
+            toast.error(<ErrorToast errors={response.errors} />);
+        } else {
+            toast.success('Successfully submitted player!');
         }
     }
 })(PlayerForm);

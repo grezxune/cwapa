@@ -3,11 +3,13 @@ import './config/config';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import AppRouter, { history } from './routers/app-router';
 import configureStore from './store/configure-store';
@@ -21,9 +23,12 @@ import checkIfLoggedIn from './authorization/check-if-logged-in';
 const store = configureStore();
 
 const jsx = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
+    <div>
+        <ToastContainer />
+        <Provider store={store}>
+            <AppRouter />
+        </Provider>
+    </div>
 );
 
 let hasRendered = false;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field } from 'formik';
-import { SingleDatePicker } from 'react-dates';
+import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 class PersonalInputs extends React.Component {
@@ -18,6 +18,7 @@ class PersonalInputs extends React.Component {
         this.setState({ date });
 
         if (date) {
+            console.log('Setting date in values: ', date);
             this.props.setFieldValue('personal.birthdate', date.valueOf());
         }
     }
@@ -27,22 +28,21 @@ class PersonalInputs extends React.Component {
     };
 
     render() {
+        console.log('Personal errors: ', this.props.errors);
         return (
             <div className="box-layout__box form__fieldset-container">
                 <span className="form__fieldset-title">Personal</span>
 
                 <div className="form__fieldset--alt">
-                    { this.props.touched && this.props.touched.personal && this.props.touched.personal.birthdate && this.props.errors && this.props.errors.personal && this.props.errors.personal.birthdate && <p className="error-text">{this.props.errors.personal.birthdate}</p>}
+                    { this.props.errors && this.props.errors.personal && this.props.errors.personal.birthdate && <p className="error-text">{this.props.errors.personal.birthdate}</p>}
                     <label className="horizontal-container">
                         <span>Birthdate</span>
-                        <SingleDatePicker 
-                            id="personal.birthdate"
-                            date={this.state.date}
-                            onDateChange={this.onDateChange}
-                            focused={this.state.calendarFocused}
-                            onFocusChange={this.onCalendarFocusChange}
-                            numberOfMonths={this.state.numberOfMonthsForBirthdate}
-                            isOutsideRange={(day) => false} />
+                        <DatePicker 
+                            selected={this.state.date}
+                            onChange={this.onDateChange}
+                            className="text-input"
+                            placeholderText="Birthdate"
+                        />
                     </label>
 
                     <label className="horizontal-container">

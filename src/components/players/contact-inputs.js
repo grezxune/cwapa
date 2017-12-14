@@ -8,7 +8,7 @@ class ContactInputs extends React.Component {
 
         return {
             email: touched && touched.contact && touched.contact.email && errors && errors.contact && errors.contact.email ? errors.contact.email : '',
-            phones: touched && touched.contact && touched.contact.phones && errors && errors.contact && errors.contact.phones ? errors.contact.phones : ''
+            phones: touched && touched.contact && touched.contact.phones && errors && errors.contact && errors.contact.phones && errors.contact.phones && typeof errors.contact.phones === 'string' ? errors.contact.phones : ''
         }
     }
 
@@ -22,6 +22,7 @@ class ContactInputs extends React.Component {
                     <Field className="text-input" type="email" name="contact.email" placeholder="Email (Required)" onChange={this.props.onChange} />
 
                     <span>One primary phone required</span>
+                    { this.getMessages().phones && <p className="error-text">{this.getMessages().phones}</p> }
                     { this.props.errors && this.props.errors.customContact && this.props.errors.customContact.phones && <p className="error-text">{this.props.errors.customContact.phones}</p> }
                     <div>
                         <Field className="text-input" type="text" name="contact.phones.cell.number" placeholder="Cell #" onChange={this.props.onChange} />

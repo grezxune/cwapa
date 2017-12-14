@@ -1,0 +1,17 @@
+.toast__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.toast__title {
+    font-size: $font-size-large;
+    text-align: center;
+}
+
+.toast__error {
+    color: $main-color !important;
+}
