@@ -2,12 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-if (process.env.NODE_ENV === 'test') {
-    require('dotenv').config({ path: '.env.test' });
-} else if (process.env.NODE_ENV === 'development') {
-    require('dotenv').config({ path: '.env.development' });
+if (env === 'production') {
+    process.env.CW_API_URL = "https://cw-apa-api.herokuapp.com";
+} else {
+    require('dotenv').config({ path: `.env.${env}`});
+    process.env.CW_API_URL =  "http://localhost:3000";
 }
 
 module.exports = (env, argv) => {
