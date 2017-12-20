@@ -4,6 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'development';
 
+console.log('Webpack.config.js env: ', env);
+
 if (env === 'production') {
     process.env.CW_API_URL = "https://cw-apa-api.herokuapp.com";
 } else {
