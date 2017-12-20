@@ -1,4 +1,6 @@
 import React from 'react';
+import { toast } from 'react-toastify';
+
 import customAxios from '../../network/axios';
 import PlayerForm from './player-form';
 import { history } from '../../routers/app-router';
@@ -23,6 +25,9 @@ class EditPlayerPage extends React.Component {
                 history.push('/players');
             }
         } catch (err) {
+            if (err.response.data && err.response.data.errors) {
+                return { errors: err.response.data.errors };
+            }
         }
 
         return submitResponse;
@@ -33,13 +38,13 @@ class EditPlayerPage extends React.Component {
             const submitResponse = await customAxios.delete(`/player/${this.props.match.params.id}`);
 
             if (submitResponse && submitResponse.status === 200) {
+                toast.success(`Successfully removed player ${this.state.player.name.first} ${this.state.player.name.last}!`);
                 history.push('/players');
-                console.log('Success removing player!!');
-            } else {
-                console.log('Error removing player');
             }
         } catch (err) {
-            console.log('Error removing player\n', err);
+            if (err.response.data && err.response.data.errors) {
+                return { errors: err.response.data.errors };
+            }
         }
     };
 

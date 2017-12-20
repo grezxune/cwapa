@@ -29,6 +29,10 @@
     }
 }
 
+.box-layout__box--centered {
+    align-self: center;
+}
+
 .box-layout__box--resizable {
     width: auto;
     display: flex;

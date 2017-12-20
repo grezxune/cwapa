@@ -50,3 +50,21 @@ button:disabled {
 .SingleDatePicker_picker {
     color: black;
 }
+
+a {
+    color: $off-white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: $font-size-large;
+
+    &:visited {
+        color: $off-white;
+    }
+}
+
+.link-button {
+    border: 2px solid $off-white;
+    padding: 10px;
+    margin: $s-size;
+    border-radius: 5px;
+}

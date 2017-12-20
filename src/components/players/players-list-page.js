@@ -33,9 +33,11 @@ class PlayersListPage extends React.Component {
     
     render() {
         return (
-            <div className="content-container content-container--page">
-                Players Page!
-                {this.state.players}
+            <div className="box-layout">
+                <div className="box-layout__box vertical-container vertical-container--centered">
+                    <span className="subtitle">User Submitted Players</span>
+                    {this.state.players}
+                </div>
             </div>
         );
     }

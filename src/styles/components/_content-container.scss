@@ -24,3 +24,35 @@
         flex-flow: column nowrap;
     }
 }
+
+.vertical-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    > * {
+        margin: $s-size;
+    }
+}
+
+.vertical-container--centered {
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    > * {
+        margin: $s-size;
+    }
+}
+
+.horizontal-container--centered {
+    justify-content: center;
+    align-items: center;
+}

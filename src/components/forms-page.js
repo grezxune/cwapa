@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const FormsPage = (prop) => (
-    <div className="content-container content-container--page">
-        <Link to="/player/add">New Player</Link>
+    <div className="box-layout">
+        <div className="box-layout__box vertical-container vertical-container--centered">
+            <span className="subtitle">Submittable Forms</span>
+            <Link to="/player/add" className="link-button">New Player</Link>
+        </div>
     </div>
 );
 

@@ -3,3 +3,14 @@
     font-family: $subheader-font;
     font-weight: bold;
 }
+
+.subtitle {
+    font-size: $font-size-large;
+    font-weight: 600;
+    color: $off-white;
+    width: 100%;
+
+    margin: 10px 0px;
+
+    @include rounded-underline();
+}

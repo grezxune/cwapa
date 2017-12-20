@@ -18,9 +18,18 @@ class PersonalInputs extends React.Component {
         this.setState({ date });
 
         if (date) {
-            console.log('Setting date in values: ', date);
             this.props.setFieldValue('personal.birthdate', date.valueOf());
         }
+    }
+
+    onDateClick = () => {
+        this.props.setTouched({
+            ...this.props.touched,
+            personal: {
+                ...this.props.touched.personal,
+                birthdate: true
+            }
+        });
     }
 
     onCalendarFocusChange = ({ focused }) => {
@@ -28,16 +37,16 @@ class PersonalInputs extends React.Component {
     };
 
     render() {
-        console.log('Personal errors: ', this.props.errors);
         return (
             <div className="box-layout__box form__fieldset-container">
                 <span className="form__fieldset-title">Personal</span>
 
                 <div className="form__fieldset--alt">
-                    { this.props.errors && this.props.errors.personal && this.props.errors.personal.birthdate && <p className="error-text">{this.props.errors.personal.birthdate}</p>}
+                    { this.props.touched && this.props.touched.personal && this.props.touched.personal.birthdate && this.props.errors && this.props.errors.personal && this.props.errors.personal.birthdate && <p className="error-text">{this.props.errors.personal.birthdate}</p>}
                     <label className="horizontal-container">
                         <span>Birthdate</span>
                         <DatePicker 
+                            onBlur={this.onDateClick}
                             selected={this.state.date}
                             onChange={this.onDateChange}
                             className="text-input"

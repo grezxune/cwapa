@@ -16,7 +16,7 @@ import ErrorToast from '../error-toast';
 
 import 'formik/dist/formik';
 
-const PlayerForm = ({ player, values, errors, touched, isSubmitting, handleChange, setFieldValue, onRemove }) => {
+const PlayerForm = ({ player, values, errors, touched, isSubmitting, handleChange, setFieldValue, onRemove, setTouched }) => {
     return (
         <div className="box-layout">
             <Form className="form">
@@ -31,7 +31,7 @@ const PlayerForm = ({ player, values, errors, touched, isSubmitting, handleChang
                     <NameInputs errors={errors} touched={touched} values={values} onChange={handleChange} />
                     <ContactInputs errors={errors} touched={touched} values={values} onChange={handleChange} />
                     <AddressInputs errors={errors} touched={touched} values={values} onChange={handleChange} />
-                    <PersonalInputs errors={errors} touched={touched} values={values} onChange={handleChange} setFieldValue={setFieldValue} />
+                    <PersonalInputs errors={errors} touched={touched} values={values} onChange={handleChange} setFieldValue={setFieldValue} setTouched={setTouched} />
                     <PreviousPlayInputs errors={errors} touched={touched} values={values} onChange={handleChange} />
                     <FriendInterestedInputs errors={errors} touched={touched} values={values} onChange={handleChange} />
                 </div>
@@ -83,7 +83,7 @@ const FormikPlayerForm = withFormik({
                 zipCode: ''
             },
             personal: player && player.personal ? player.personal : {
-                birthdate: null,
+                birthdate: undefined,
                 gender: 'Male',
                 legalStatus: 'Single',
                 employment: {
@@ -130,7 +130,7 @@ const FormikPlayerForm = withFormik({
                     number: Yup.string(),
                     ext: Yup.string()
                 })
-            }).test('onePrimaryRequired', 'At least one primary phone required', (phones, schema) => {
+            }).test('onePrimaryRequired', 'One primary phone is required', (phones, schema) => {
                 const hasAtLeastOnePrimaryPhone = ((phones.cell.number && phones.cell.isPrimary) ||
                                                    (phones.home.number && phones.home.isPrimary) ||
                                                    (phones.work.number && phones.work.isPrimary));
@@ -145,7 +145,7 @@ const FormikPlayerForm = withFormik({
             zipCode: Yup.string().required('Zip Code is required')
         }),
         personal: Yup.object().shape({
-            birthdate: Yup.number().nullable().required('Birthdate is required')
+            birthdate: Yup.mixed()
             .test('MinAge',
                     'You must be at least 12 years of age to sign up for the APA',
                     (birthdate, schema) => {
@@ -155,7 +155,7 @@ const FormikPlayerForm = withFormik({
 
                         return currentBirthdate.isValid() && difference >= 12;
                     }
-            ),
+            ).required('Birthdate is required'),
             gender: Yup.string(),
             legalStatus: Yup.string(),
             employment: Yup.object().shape({
