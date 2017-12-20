@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withFormik, Form, Field } from 'formik';
 import Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import customAxios from '../network/axios';
 import { login } from '../actions/auth';
@@ -53,11 +54,15 @@ const FormikLogin = withFormik({
             if (loginResponse && loginResponse.status === 200) {
                 values.login(loginResponse.data.user._id);
                 history.push('/');
+                toast.success('Successfully logged in!');
             } else {
                 setErrors({ loginError: 'Email or password is incorrect' });
+                toast.error('Error logging in');
             }
         } catch (err) {
             setErrors({ loginError: 'Email or password is incorrect' });
+            toast.error('Error logging in');
+            setSubmitting(false);
         }
     }
 })(LoginPage);
