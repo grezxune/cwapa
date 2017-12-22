@@ -1,0 +1,11 @@
+.selection-box {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: $s-size;
+    
+    > * {
+        margin: $s-size;
+    }
+}
