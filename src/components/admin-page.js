@@ -9,13 +9,13 @@ class AdminPage extends React.Component {
     render() {
         return (
             <div className="vertical-container vertical-container--centered">
-                <div className="box-layout__box box-layout__box--centered vertical-container vertical-container--centered">
+                <div className="box-layout__box box-layout__box--centered selection-box">
                     <span className="subtitle">User Submitted Data</span>
                     <Link className="link-button" to="/players">Players</Link>
                     <Link className="link-button" to="/teams">Teams</Link>
                 </div>
 
-                <div className="box-layout__box box-layout__box--centered vertical-container vertical-container--centered">
+                <div className="box-layout__box box-layout__box--centered selection-box">
                     <span className="subtitle">Forms For Admin</span>
                     <Link className="link-button" to="/news-item/add">Add News Item</Link>
                     <Link className="link-button" to="/news-item/add">Add Event</Link>

@@ -68,3 +68,11 @@ a {
     margin: $s-size;
     border-radius: 5px;
 }
+
+.opaque {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}

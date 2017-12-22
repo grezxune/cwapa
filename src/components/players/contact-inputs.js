@@ -17,14 +17,15 @@ class ContactInputs extends React.Component {
             <div className="box-layout__box form__fieldset-container">
                 <span className="form__fieldset-title">Contact</span>
 
-                <div className="form__fieldset--alt">
+                <div className="form__fieldset">
                     { this.getMessages().email && <p className="error-text">{this.getMessages().email}</p> }
-                    <Field className="text-input" type="email" name="contact.email" placeholder="Email (Required)" onChange={this.props.onChange} />
+                    <Field className="text-input full-width" type="email" name="contact.email" placeholder="Email (Required)" onChange={this.props.onChange} />
 
                     <span>One primary phone required</span>
                     { this.getMessages().phones && <p className="error-text">{this.getMessages().phones}</p> }
                     { this.props.errors && this.props.errors.customContact && this.props.errors.customContact.phones && <p className="error-text">{this.props.errors.customContact.phones}</p> }
-                    <div>
+
+                    <div className="horizontal-container horizontal-container--centered">
                         <Field className="text-input" type="text" name="contact.phones.cell.number" placeholder="Cell #" onChange={this.props.onChange} />
                         <label className="horizontal-container">
                             <Field type="checkbox" name="contact.phones.cell.isPrimary" onChange={this.props.onChange} checked={this.props.values.contact.phones.cell.isPrimary} />
@@ -32,7 +33,7 @@ class ContactInputs extends React.Component {
                         </label>
                     </div>
 
-                    <div>
+                    <div className="horizontal-container horizontal-container--centered">
                         <Field className="text-input" type="text" name="contact.phones.home.number" placeholder="Home #" onChange={this.props.onChange} />
                         <label className="horizontal-container">
                             <Field type="checkbox" name="contact.phones.home.isPrimary" onChange={this.props.onChange} checked={this.props.values.contact.phones.home.isPrimary} />
@@ -40,9 +41,10 @@ class ContactInputs extends React.Component {
                         </label>
                     </div>
 
-                    <div>
+                    <div className="horizontal-container horizontal-container--centered full-width">
                         <Field className="text-input" type="text" name="contact.phones.work.number" placeholder="Work #" onChange={this.props.onChange} />
                         <Field className="text-input" type="text" name="contact.phones.work.ext" placeholder="Ext" onChange={this.props.onChange} />
+
                         <label className="horizontal-container">
                             <Field type="checkbox" name="contact.phones.work.isPrimary" onChange={this.props.onChange} checked={this.props.values.contact.phones.work.isPrimary} />
                             <span>Primary</span>

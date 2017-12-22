@@ -25,15 +25,20 @@
     }
 }
 
-.vertical-container {
+.full-width {
+    width: 100%;
+}
+
+.container {
     display: flex;
+}
+
+.vertical-container {
+    @extend .container;
+
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-
-    > * {
-        margin: $s-size;
-    }
 }
 
 .vertical-container--centered {
@@ -42,13 +47,14 @@
 }
 
 .horizontal-container {
-    display: flex;
+    @extend .container;
+
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
 
-    > * {
-        margin: $s-size;
+    > *:not(:first-child) {
+        margin: 0px 5px;
     }
 }
 

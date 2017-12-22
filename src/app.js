@@ -54,7 +54,6 @@ const checkForUser = async () => {
     }
 
     renderApp();
-    history.push('/');
 }
 
 checkForUser();

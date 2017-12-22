@@ -15,7 +15,7 @@ const PreviousPlayInputs = ({ values, onChange }) => {
             <div className="form__fieldset">
                 <Field className="text-input" type="text" name="previousPlay.location" placeholder="Previous Location of Play" disabled={!values.previousPlay.havePlayedBefore} onChange={onChange} />
                 <Field className="text-input" type="text" name="previousPlay.lastYearOfPlay" placeholder="Last Year of Play" disabled={!values.previousPlay.havePlayedBefore} onChange={onChange} />
-                <label className="horizontal-container">
+                <label className="horizontal-container horizontal-container--centered">
                     <span>Previous Skill Level</span>
                     <Field
                         component="select"

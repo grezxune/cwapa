@@ -8,8 +8,6 @@ class PersonalInputs extends React.Component {
         super(props);
 
         this.state = {
-            calenddarFocused: false,
-            numberOfMonthsForBirthdate: 1,
             date: props.values.personal.birthdate ? moment(props.values.personal.birthdate) : null
         }
     }
@@ -43,7 +41,7 @@ class PersonalInputs extends React.Component {
 
                 <div className="form__fieldset--alt">
                     { this.props.touched && this.props.touched.personal && this.props.touched.personal.birthdate && this.props.errors && this.props.errors.personal && this.props.errors.personal.birthdate && <p className="error-text">{this.props.errors.personal.birthdate}</p>}
-                    <label className="horizontal-container">
+                    <label className="horizontal-container horizontal-container--centered">
                         <span>Birthdate</span>
                         <DatePicker 
                             onBlur={this.onDateClick}
@@ -54,7 +52,7 @@ class PersonalInputs extends React.Component {
                         />
                     </label>
 
-                    <label className="horizontal-container">
+                    <label className="horizontal-container horizontal-container--centered">
                         <span>Gender</span>
                         <Field
                             component="select"
@@ -66,7 +64,7 @@ class PersonalInputs extends React.Component {
                         </Field>
                     </label>
 
-                    <label className="horizontal-container">
+                    <label className="horizontal-container horizontal-container--centered">
                         <span>Legal Status</span>
                         <Field
                             component="select"
@@ -80,8 +78,8 @@ class PersonalInputs extends React.Component {
                         </Field>
                     </label>
 
-                    <Field className="text-input" type="text" name="personal.employment.place" placeholder="Place of Employment" onChange={this.props.onChange} />
-                    <Field className="text-input" type="text" name="personal.employment.occupation" placeholder="Occupation" onChange={this.props.onChange} />
+                    <Field className="text-input full-width" type="text" name="personal.employment.place" placeholder="Place of Employment" onChange={this.props.onChange} />
+                    <Field className="text-input full-width" type="text" name="personal.employment.occupation" placeholder="Occupation" onChange={this.props.onChange} />
                 </div>
             </div>
         );

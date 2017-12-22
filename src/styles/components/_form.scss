@@ -23,7 +23,6 @@
 .form__fieldset-title {
     font-size: $font-size-xlarge;
     width: 100%;
-    margin: 0px $s-size $m-size $s-size;
     @include rounded-underline();
 }
 
@@ -64,10 +63,6 @@
     width: 100%;
     margin: 5px 10px;
 
-    input {
-        width: 100%;
-    }
-
     label {
         cursor: pointer;
     }
@@ -99,17 +94,6 @@
                 margin: 0px 0px 0px 5px;
             }
         }
-    }
-}
-
-.horizontal-container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-
-    > * {
-        margin: 0px 5px;
     }
 }
 
