@@ -17,12 +17,12 @@ class ResourcesPage extends React.Component {
                     <a className="link-button" href="/resources/2018-8-Ball-Doubles-Rules-for-Participation.pdf" target="_blank">2018 8-Ball Doubles - Rules for Participation</a>
                     <a className="link-button" href="/resources/2018-Jack-and-Jill-Flier.pdf" target="_blank">2018 Jack and Jill Flier</a>
                     <a className="link-button" href="/resources/2018-Jack-and-Jill-Rules-for-Participation.pdf" target="_blank">2018 Jack and Jill - Rules for Participation</a>
-                    <a className="link-button" href="/resources/2018-Ladies-flier.pdf" target="_blank">2018 Ladies Flier</a>
+                    <a className="link-button" href="/resources/2018-Ladies-Flier.pdf" target="_blank">2018 Ladies Flier</a>
                     <a className="link-button" href="/resources/2018-Ladies-Rules-for-Participation.pdf" target="_blank">2018 Ladies - Rules for Participation</a>
                     <a className="link-button" href="/resources/2018-Masters-Flier.pdf" target="_blank">2018 Masters Flier</a>
                     <a className="link-button" href="/resources/2018-Masters-Rules-for-Participation.pdf" target="_blank">2018 Masters - Rules for Participation</a>
                     <a className="link-button" href="/resources/2018-Team-Captains-Championship-Flier.pdf" target="_blank">2018 Team Captains Championship Flier</a>
-                    <a className="link-button" href="/resources/2018-Team-Captains-Championship-Rules-for-participation.pdf" target="_blank">2018 Team Captains Championship - Rules for Participation</a>
+                    <a className="link-button" href="/resources/2018-Team-Captains-Championship-Rules-for-Participation.pdf" target="_blank">2018 Team Captains Championship - Rules for Participation</a>
                 </div>
             </div>
         );
