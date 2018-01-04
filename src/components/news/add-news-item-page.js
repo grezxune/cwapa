@@ -59,17 +59,14 @@ class AddNewsItemPage extends React.Component {
                 <Form className="box-layout__box selection-box">
                     <span className="subtitle">Add News Item</span>
 
-                    <label className="horizontal-container horizontal-container--centered">
-                        <span>Date</span>
-                        <DatePicker 
-                            onBlur={this.onDateClick}
-                            selected={moment(this.props.values.newsItem.date)}
-                            onChange={this.onDateChange}
-                            className="text-input"
-                            placeholderText="Date (Required)"
-                        />
-                    </label>
-                    <Field className="text-input" type="text" name="newsItem.title" placeholder="Title (Required)" />
+                    <DatePicker 
+                        onBlur={this.onDateClick}
+                        selected={moment(this.props.values.newsItem.date)}
+                        onChange={this.onDateChange}
+                        className="text-input"
+                        placeholderText="Date (Required)"
+                    />
+                    <Field className="text-input full-width" type="text" name="newsItem.title" placeholder="Title (Required)" />
                     <Field className="textarea" component="textarea" name="newsItem.excerpt" placeholder="Excerpt (Required)" />
                     <Field className="textarea" component="textarea" name="newsItem.content" placeholder="Content (Required)" />
 

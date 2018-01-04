@@ -14,6 +14,7 @@ import PlayerForm from '../components/players/player-form';
 import AddPlayerPage from '../components/players/add-player-page';
 import EditPlayerPage from '../components/players/edit-player-page';
 import TeamsListPage from '../components/teams/teams-list-page';
+import ResourcesPage from '../components/resources/resources-page';
 
 import AddUserPage from '../components/users/add-user-page';
 import AddNewsItemPage from '../components/news/add-news-item-page';
@@ -35,6 +36,7 @@ const AppRouter = () => (
                 <PublicRoute path="/login" component={LoginPage} />
                 <PublicRoute path="/player/add" component={AddPlayerPage} />
                 <PublicRoute path="/player/:id" component={EditPlayerPage} />
+                <PublicRoute path="/resources" component={ResourcesPage} />
                 
                 <PrivateRoute path="/admin" component={AdminPage} />
                 <PrivateRoute path="/players" component={PlayersListPage} />

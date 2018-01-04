@@ -26,8 +26,11 @@ class EventsPage extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.state.eventItems}
+            <div className="vertical-container vertical-container--centered">
+                <div className="box-layout__box box-layout__box--centered selection-box">
+                    <span className="subtitle">Events</span>
+                    <a className="link-button" href="https://facebook.com/centralwisconsinapa/events" target="_blank">Event List</a>
+                </div>
             </div>
         );
     }
