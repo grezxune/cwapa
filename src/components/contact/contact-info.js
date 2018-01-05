@@ -3,7 +3,7 @@ import React from 'react';
 const ContactInfo = (props) => (
     <div className="contact-info__person">
         { props.name && (
-            <div className="contact-info__name">
+            <div className="subtitle">
                 <span>{props.name}</span>
                 {props.division && (
                     <span className="contact-info__division">({props.division})</span>

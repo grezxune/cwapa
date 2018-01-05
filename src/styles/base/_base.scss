@@ -68,6 +68,33 @@ a {
     margin: $s-size;
     border-radius: 5px;
     width: 100%;
+
+    &:hover {
+        background-color: $off-white;
+        color: $main-color;
+    }
+}
+
+.link-button--alt {
+    border: none;
+    color: $main-color !important;
+}
+
+.link-button-group {
+    border: 2px solid $off-white;
+    padding: 10px;
+    margin: $s-size;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+
+    a {
+        color: $off-white;
+    }
 }
 
 .opaque {

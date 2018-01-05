@@ -5,7 +5,7 @@ const ContactPage = (prop) => (
     <div className="content-container content-container--page">
         <div className="contact-info">
             <div className="contact-info__section">
-                <div className="contact-info__section__header">
+                <div className="section-header">
                     <span>League Operators</span>
                 </div>
                 <ContactInfo
@@ -18,7 +18,7 @@ const ContactPage = (prop) => (
                     email="ttreb@apaleagues.com" />
             </div>
             <div className="contact-info__section">
-                <div className="contact-info__section__header">
+                <div className="section-header">
                     <span>Division Representatives</span>
                 </div>
                 <ContactInfo

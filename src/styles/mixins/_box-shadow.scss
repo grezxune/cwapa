@@ -1,8 +1,8 @@
-@mixin box-shadow($offset-x: 5px,
-                  $offset-y: 5px,
+@mixin box-shadow($offset-x: 3px,
+                  $offset-y: 3px,
                   $blur-radius: 10px,
                   $spread-radius: 2px,
-                  $color: rgba(71, 71, 71, 1)) {
+                  $color: rgba(71, 71, 71, .7)) {
     box-shadow: $offset-x $offset-y $blur-radius $spread-radius $color;
 }
 

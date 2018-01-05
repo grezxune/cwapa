@@ -22,11 +22,15 @@
     width: $desktop-breakpoint;
     align-self: flex-start;
 
-    @include pressable();
+    @include box-shadow();
 
     @media (max-width: $desktop-breakpoint) {
         width: 95%;
     }
+}
+
+.box-layout__box--auto-width {
+    width: auto;
 }
 
 .box-layout__box--centered {

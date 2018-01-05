@@ -1,16 +1,19 @@
 .section-header {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-xxlarge;
     font-family: $subheader-font;
     font-weight: bold;
+    width: 100%;
+    text-align: center;
 }
 
 .subtitle {
-    font-size: $font-size-large;
-    font-weight: 600;
+    font-size: $font-size-xlarge;
+    font-weight: bold;
     color: $off-white;
     width: 100%;
+    text-align: center;
 
-    margin: 10px 0px;
+    margin: 0px 0px 10px 0px;
 
     @include rounded-underline();
 }

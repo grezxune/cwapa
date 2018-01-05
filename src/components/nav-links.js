@@ -34,7 +34,7 @@ class NavLinks extends React.Component {
         return (
             <div className="header__nav-links__container">
                 <div className="header__nav-links">
-                    <NavLink to="/" activeClassName="is-active" className="header__nav-link" exact="True">Home</NavLink>
+                    <NavLink to="/" activeClassName="is-active" className="header__nav-link" exact={true}>Home</NavLink>
                     <NavLink to="/events" activeClassName="is-active" className="header__nav-link">Events</NavLink>
                     { false && <NavLink to="/news" activeClassName="is-active" className="header__nav-link">News</NavLink> }
                     <NavLink to="/resources" activeClassName="is-active" className="header__nav-link">Resources</NavLink>
@@ -48,7 +48,7 @@ class NavLinks extends React.Component {
                             <a className="header__nav-link" onClick={this.logoutUser}>Logout</a>
                         )
                     }
-                    { !this.props.isAuthenticated && (
+                    { !this.props.isAuthenticated && false && (
                             <NavLink to="/login" activeClassName="is-active" className="header__nav-link">Login</NavLink>
                         )
                     }
