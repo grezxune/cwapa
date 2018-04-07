@@ -1,11 +1,31 @@
 .page-layout {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
 
+    display: grid;
+    grid-template-areas:
+        'logo banner right-panel'
+        'logo content right-panel'
+        'left-panel content right-panel'
+        'facebook-panel content right-panel'
+        'ad-panel content right-panel'
+        'ad-panel content right-panel'
+        'footer footer footer';
+    grid-template-columns: 250px auto minmax(auto, 400px);
+    grid-template-rows: auto 150px auto auto auto 1fr auto;
+    
     @media (max-width: $desktop-breakpoint) {
-        flex-flow: column nowrap;
+        grid-template-areas:
+            'logo'
+            'left-panel'
+            'banner'
+            'content'
+            'right-panel'
+            'facebook-panel'
+            'ad-panel'
+            'footer';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 }
 
@@ -13,4 +33,37 @@
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.logo {
+}
+
+.banner {
+}
+
+.right-panel {
+    grid-area: right-panel;
+    color: $dark-grey;
+}
+
+.left-panel {
+    grid-area: left-panel;
+    background: $main-color;
+}
+
+.cwapa-ad-panel {
+    grid-area: ad-panel;
+    background: $main-color;
+}
+
+.content {
+    grid-area: content;
+}
+
+.right-panel {
+    grid-area: right-panel;
+}
+
+.footer {
+    grid-area: footer;
 }

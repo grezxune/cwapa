@@ -84,8 +84,8 @@ const FormikPlayerForm = withFormik({
             },
             personal: player && player.personal ? player.personal : {
                 birthdate: undefined,
-                gender: 'Male',
-                legalStatus: 'Single',
+                gender: 'Gender',
+                legalStatus: 'Legal Status',
                 employment: {
                     place: '',
                     occupation: ''
@@ -95,7 +95,7 @@ const FormikPlayerForm = withFormik({
                 havePlayedBefore: false,
                 location: '',
                 lastYearOfPlay: '',
-                lastSkillLevel: '4'
+                lastSkillLevel: 'Previous Skill Level'
             },
             friendInterested: player && player.friendInterested ? player.friendInterested : {
                 name: {
@@ -156,8 +156,18 @@ const FormikPlayerForm = withFormik({
                         return currentBirthdate.isValid() && difference >= 12;
                     }
             ).required('Birthdate is required'),
-            gender: Yup.string(),
-            legalStatus: Yup.string(),
+            gender: Yup.string()
+                    .test('ValidGender',
+                          'You must select a valid gender option',
+                          (gender, schema) => {
+                              return gender === 'Male' || gender === 'Female';
+            }),
+            legalStatus: Yup.string()
+                         .test('ValidLegalStatus',
+                                'You must select a valid Legal Status option',
+                                (legalStatus, schema) => {
+                                    return legalStatus === 'Married' || legalStatus === 'Single' || legalStatus === 'Separated' || legalStatus === 'Widowed';
+            }),
             employment: Yup.object().shape({
                 place: Yup.string(),
                 occupation: Yup.string()
@@ -168,6 +178,19 @@ const FormikPlayerForm = withFormik({
             location: Yup.string(),
             lastYearOfPlay: Yup.string(),
             lastSkillLevel: Yup.string()
+                            .test('ValidSkillLevel',
+                                    'You must select a valid Previous Skill Level',
+                                    function(lastSkillLevel) {
+                                        const havePlayedBefore = this.resolve(Yup.ref('havePlayedBefore'));
+
+                                        if (havePlayedBefore) {
+                                            return lastSkillLevel === '2' || lastSkillLevel === '3' ||
+                                                    lastSkillLevel === '4' || lastSkillLevel === '5' ||
+                                                    lastSkillLevel === '6' || lastSkillLevel === '7' || lastSkillLevel === 'IDR';
+                                        } else {
+                                            return true;
+                                        }
+                                    })
         }),
         friendInterested: Yup.object().shape({
             name: Yup.object().shape({

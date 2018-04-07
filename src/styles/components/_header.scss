@@ -18,8 +18,6 @@
 }
 
 .header__logo {
-    width: 100px;
-    height: 100px;
 }
 
  .header__nav-links__container {
@@ -37,7 +35,7 @@
 
 .header__nav-links {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     font-family: $header-font;

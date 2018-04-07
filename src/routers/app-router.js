@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, Switch} from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import HomePage from '../components/home-page';
 import NotFoundPage from '../components/not-found-page';
@@ -15,6 +15,7 @@ import AddPlayerPage from '../components/players/add-player-page';
 import EditPlayerPage from '../components/players/edit-player-page';
 import TeamsListPage from '../components/teams/teams-list-page';
 import ResourcesPage from '../components/resources/resources-page';
+import NewsFeed from '../components/news-feed/news-feed';
 
 import AddUserPage from '../components/users/add-user-page';
 import AddNewsItemPage from '../components/news/add-news-item-page';
@@ -28,21 +29,78 @@ const AppRouter = () => (
     <Router history={history}>
         <div>
             <Switch>
-                <PublicRoute path="/" component={HomePage} exact={true} />
-                <PublicRoute path="/events" component={EventsPage} />
-                <PublicRoute path="/news" component={NewsPage} />
-                <PublicRoute path="/forms" component={FormsPage} />
-                <PublicRoute path="/contact" component={ContactPage} />
-                <PublicRoute path="/login" component={LoginPage} />
-                <PublicRoute path="/player/add" component={AddPlayerPage} />
-                <PublicRoute path="/player/:id" component={EditPlayerPage} />
-                <PublicRoute path="/resources" component={ResourcesPage} />
-                
-                <PrivateRoute path="/admin" component={AdminPage} />
-                <PrivateRoute path="/players" component={PlayersListPage} />
-                <PrivateRoute path="/teams" component={TeamsListPage} />
-                <PrivateRoute path="/news-item/add" component={AddNewsItemPage} />
-                <PrivateRoute path="/users/add" component={AddUserPage} />
+                <PublicRoute
+                    path="/"
+                    component={HomePage}
+                    rightPanel={NewsFeed}
+                    exact={true}
+                />
+                <PublicRoute
+                    path="/events"
+                    component={EventsPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/news"
+                    component={NewsPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/forms"
+                    component={FormsPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/contact"
+                    component={ContactPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/login"
+                    component={LoginPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/player/add"
+                    component={AddPlayerPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/player/:id"
+                    component={EditPlayerPage}
+                    rightPanel={NewsFeed}
+                />
+                <PublicRoute
+                    path="/resources"
+                    component={ResourcesPage}
+                    rightPanel={NewsFeed}
+                />
+
+                <PrivateRoute
+                    path="/admin"
+                    component={AdminPage}
+                    rightPanel={NewsFeed}
+                />
+                <PrivateRoute
+                    path="/players"
+                    component={PlayersListPage}
+                    rightPanel={NewsFeed}
+                />
+                <PrivateRoute
+                    path="/teams"
+                    component={TeamsListPage}
+                    rightPanel={NewsFeed}
+                />
+                <PrivateRoute
+                    path="/news-item/add"
+                    component={AddNewsItemPage}
+                    rightPanel={NewsFeed}
+                />
+                <PrivateRoute
+                    path="/users/add"
+                    component={AddUserPage}
+                    rightPanel={NewsFeed}
+                />
 
                 <Route component={NotFoundPage} />
             </Switch>

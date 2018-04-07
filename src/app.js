@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import { ThemeProvider } from 'react-jss';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -22,27 +23,30 @@ import checkIfLoggedIn from './authorization/check-if-logged-in';
 
 const store = configureStore();
 
+const theme = {
+    colorPrimary: 'blue'
+};
+
 const jsx = (
-    <div>
-        <ToastContainer />
-        <Provider store={store}>
-            <AppRouter />
-        </Provider>
-    </div>
+    <ThemeProvider theme={theme}>
+        <div>
+            <ToastContainer />
+            <Provider store={store}>
+                <AppRouter />
+            </Provider>
+        </div>
+    </ThemeProvider>
 );
 
 let hasRendered = false;
 const renderApp = () => {
     if (!hasRendered) {
         ReactDOM.render(jsx, document.getElementById('app'));
-        hasRendered = true
+        hasRendered = true;
     }
 };
 
-ReactDOM.render(
-    <LoadingPage />,
-    document.getElementById('app')
-);
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 const checkForUser = async () => {
     const payload = await checkIfLoggedIn();
@@ -54,7 +58,7 @@ const checkForUser = async () => {
     }
 
     renderApp();
-}
+};
 
 checkForUser();
 

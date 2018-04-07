@@ -4,6 +4,7 @@
     font-size: $font-size-large;
     font-weight: 300;
     padding: $s-size;
+    background: $off-white;
 }
 
 .input--medium {
@@ -20,7 +21,7 @@
 
 .select {
     @extend .text-input;
-    width: auto;
+    width: 100%;
 }
 
 .textarea {
@@ -58,7 +59,7 @@ input[type="checkbox"]:checked:after {
 }
 
 .react-datepicker {
-    font-size: $font-size-large;
+    width: 100%;
 }
 
 .uploaded-image {
