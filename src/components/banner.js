@@ -22,7 +22,8 @@ const styles = theme => ({
         background: 'transparent',
         position: 'sticky',
         top: '0',
-        zIndex: '10'
+        zIndex: '10',
+        width: '100%'
     },
     attentionBanner: {
         color: Variables.offWhite,
