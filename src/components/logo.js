@@ -19,6 +19,10 @@ const styles = theme => ({
         background: 'white',
         margin: '0 auto',
 
+        [`@media(max-width: ${Variables.desktopBreakpoint})`]: {
+            width: '100%'
+        },
+
         '& img': {
             width: '100%',
             height: '100%',
