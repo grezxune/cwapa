@@ -38,7 +38,7 @@ const styles = theme => ({
         flexFlow: 'column nowrap',
         background: Variables.mainColor,
         color: Variables.offWhite,
-        borderRadius: '0px 0px 5px 5px',
+        borderRadius: '0px 0px 2px 2px',
         padding: '5px',
         margin: '0px 0px 10px 0px',
         width: '100%'
@@ -67,7 +67,7 @@ const styles = theme => ({
         justifyContent: 'space-between',
         width: '100%',
         padding: '5px',
-        borderRadius: '5px 5px 0px 0px',
+        borderRadius: '2px 2px 0px 0px',
         background: Variables.accentColor,
         color: Variables.offWhite
     }

@@ -77,13 +77,6 @@ class NavLinks extends React.Component {
                     Resources
                 </NavLink>
                 <NavLink
-                    to="/forms"
-                    activeClassName="is-active"
-                    className="header__nav-link"
-                >
-                    Forms
-                </NavLink>
-                <NavLink
                     to="/contact"
                     activeClassName="is-active"
                     className="header__nav-link"

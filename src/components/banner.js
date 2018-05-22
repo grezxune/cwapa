@@ -8,8 +8,7 @@ const Banner = ({ classes }) => (
     <div className={classes.banner}>
         <div className={classes.attentionBanner}>
             <span>
-                NEXT EVENT: Women's Vegas Qualifier, April 14 at Four Stools
-                Short
+                NEXT EVENT: World Qualifier @ Four Stools, Wisconsin Rapids
             </span>
             <MobileMenu />
         </div>

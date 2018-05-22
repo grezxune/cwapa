@@ -1,4 +1,6 @@
 import React from 'react';
+import injectSheet from 'react-jss';
+
 import PlayerForm from './player-form';
 import customAxios from '../../network/axios';
 import { history } from '../../routers/app-router';
@@ -8,7 +10,7 @@ class AddPlayerPage extends React.Component {
         super(props);
     }
 
-    addPlayer = async (player) => {
+    addPlayer = async player => {
         let submitResponse;
         try {
             submitResponse = await customAxios.post('/player', player);
@@ -27,11 +29,19 @@ class AddPlayerPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={`${this.props.classes.page} vertical-container`}>
                 <PlayerForm onSubmit={this.addPlayer} />
             </div>
         );
     }
 }
 
-export default AddPlayerPage;
+const styles = theme => ({
+    page: {
+        gridArea: 'content'
+    }
+});
+
+const styledComponent = injectSheet(styles)(AddPlayerPage);
+
+export { styledComponent as default, AddPlayerPage };

@@ -66,10 +66,13 @@ const styles = theme => ({
         background: Variables.mainColor,
         display: 'flex',
         justifyContent: 'space-between',
-        padding: Variables.sSize
+        padding: Variables.mSize,
+        height: '100vh',
+        border: '1px solid white'
     },
     mobileMenuButton: {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontSize: Variables.fontSizeXLarge
     }
 });
 

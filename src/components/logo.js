@@ -14,7 +14,10 @@ const styles = theme => ({
     logo: {
         gridArea: 'logo',
         height: '200px',
+        width: '250px',
         textAlign: 'center',
+        background: 'white',
+        margin: '0 auto',
 
         '& img': {
             width: '100%',

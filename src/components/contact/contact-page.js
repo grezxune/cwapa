@@ -1,8 +1,8 @@
 import React from 'react';
 import ContactInfo from './contact-info';
 
-const ContactPage = (prop) => (
-    <div className="content-container content-container--page">
+const ContactPage = prop => (
+    <div className="content horizontal-container--centered">
         <div className="contact-info">
             <div className="contact-info__section">
                 <div className="section-header">
@@ -11,11 +11,13 @@ const ContactPage = (prop) => (
                 <ContactInfo
                     name="Jeanna Diedrich"
                     phone="715-323-1554"
-                    email="jdiedrich@apaleagues.com" />
+                    email="jdiedrich@apaleagues.com"
+                />
                 <ContactInfo
                     name="Tommy Treb"
                     phone="715-321-1583"
-                    email="ttreb@apaleagues.com" />
+                    email="ttreb@apaleagues.com"
+                />
             </div>
             <div className="contact-info__section">
                 <div className="section-header">
@@ -25,7 +27,8 @@ const ContactPage = (prop) => (
                     name="Brandon Jacoby"
                     phone="715-213-2505"
                     email="ferkeys@gmail.com"
-                    division="Wisconsin Rapids" />
+                    division="Wisconsin Rapids"
+                />
             </div>
         </div>
     </div>

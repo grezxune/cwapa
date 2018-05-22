@@ -27,15 +27,37 @@ class NewsFeed extends React.Component {
         this.setState({
             triviaItems: [
                 {
+                    date: 'Apr 5th, 2018',
+                    winners: [
+                        {
+                            name: 'Tony Dahlman',
+                            prize: 'Free Week of Play'
+                        }
+                    ],
+                    question: 'This is the trivia question',
+                    answer: 'This is the answer'
+                },
+                {
+                    date: 'Mar 29nd, 2018',
+                    winners: [
+                        {
+                            name: 'Tom Myher',
+                            prize: 'Cue Claw & Singles Board'
+                        }
+                    ],
+                    question: 'This is the trivia question',
+                    answer: 'This is the answer'
+                },
+                {
                     date: 'Mar 22nd, 2018',
                     winners: [
                         {
                             name: 'Steven Funk',
-                            prize: '???'
+                            prize: 'Glove | Chalk'
                         },
                         {
                             name: 'Chelsey Weiler',
-                            prize: '???'
+                            prize: 'Glove | Chalk'
                         }
                     ],
                     question: 'This is the trivia question',
@@ -46,11 +68,11 @@ class NewsFeed extends React.Component {
                     winners: [
                         {
                             name: 'Tim R',
-                            prize: '???'
+                            prize: 'Chalk Holder | Cue Claw | Glove'
                         },
                         {
                             name: 'Bob O',
-                            prize: '???'
+                            prize: 'Chalk Holder | Cue Claw | Glove'
                         }
                     ],
                     question: 'This is the trivia question',
@@ -60,12 +82,49 @@ class NewsFeed extends React.Component {
                     date: 'Mar 8th, 2018',
                     winners: [
                         {
-                            name: 'Mark C',
-                            prize: '???'
+                            name: 'Joseph S',
+                            prize: 'Chalk Holder | Pocket Marker'
                         },
                         {
-                            name: 'Brittney W',
-                            prize: '???'
+                            name: 'Robert O',
+                            prize: 'Chalk Holder | Pocket Marker'
+                        }
+                    ],
+                    question: 'This is the trivia question 2',
+                    answer: 'This is the answer 2'
+                },
+                {
+                    date: 'Mar 1st, 2018',
+                    winners: [
+                        {
+                            name: 'Kenny N',
+                            prize: 'Pocket Marker | Glove'
+                        }
+                    ],
+                    question: 'This is the trivia question 2',
+                    answer: 'This is the answer 2'
+                },
+                {
+                    date: 'Feb 22nd, 2018',
+                    winners: [
+                        {
+                            name: 'Mark C',
+                            prize: 'T-Shirt | Chalk'
+                        }
+                    ],
+                    question: 'This is the trivia question 2',
+                    answer: 'This is the answer 2'
+                },
+                {
+                    date: 'Feb 15th, 2018',
+                    winners: [
+                        {
+                            name: 'Carol O',
+                            prize: 'Cue Claw'
+                        },
+                        {
+                            name: 'Kimberly E',
+                            prize: 'Pocket Marker'
                         }
                     ],
                     question: 'This is the trivia question 2',
