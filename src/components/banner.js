@@ -8,7 +8,15 @@ const Banner = ({ classes }) => (
     <div className={classes.banner}>
         <div className={classes.attentionBanner}>
             <span>
-                NEXT EVENT: World Qualifier @ Four Stools, Wisconsin Rapids
+                NEXT EVENT:
+                <a
+                    className={classes.attentionBannerLink}
+                    href="https://www.facebook.com/events/281531118996975/"
+                    target="_blank"
+                >
+                    World Qualifier Saturday June 2nd @ Four Stools, Wisconsin
+                    Rapids
+                </a>
             </span>
             <MobileMenu />
         </div>
@@ -36,6 +44,10 @@ const styles = theme => ({
         [`@media(min-width: ${Variables.desktopBreakpoint})`]: {
             justifyContent: 'center'
         }
+    },
+    attentionBannerLink: {
+        textDecoration: 'underline',
+        marginLeft: '5px'
     }
 });
 
