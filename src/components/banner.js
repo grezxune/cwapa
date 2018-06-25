@@ -11,11 +11,11 @@ const Banner = ({ classes }) => (
                 NEXT EVENT:
                 <a
                     className={classes.attentionBannerLink}
-                    href="https://www.facebook.com/events/281531118996975/"
+                    href="https://www.facebook.com/events/357711458001924/"
                     target="_blank"
                 >
-                    World Qualifier Saturday June 2nd @ Four Stools, Wisconsin
-                    Rapids
+                    Masters Championship Vegas Qualifier, Saturday June 30th
+                    10am @ Lefty's Trackside, Marshfield
                 </a>
             </span>
             <MobileMenu />
