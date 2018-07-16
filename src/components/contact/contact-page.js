@@ -19,17 +19,6 @@ const ContactPage = prop => (
                     email="ttreb@apaleagues.com"
                 />
             </div>
-            <div className="contact-info__section">
-                <div className="section-header">
-                    <span>Division Representatives</span>
-                </div>
-                <ContactInfo
-                    name="Brandon Jacoby"
-                    phone="715-213-2505"
-                    email="ferkeys@gmail.com"
-                    division="Wisconsin Rapids"
-                />
-            </div>
         </div>
     </div>
 );

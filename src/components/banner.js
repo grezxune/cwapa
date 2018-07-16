@@ -11,11 +11,11 @@ const Banner = ({ classes }) => (
                 NEXT EVENT:
                 <a
                     className={classes.attentionBannerLink}
-                    href="https://www.facebook.com/events/357711458001924/"
+                    href="https://www.facebook.com/events/439290249830161/"
                     target="_blank"
                 >
-                    Masters Championship Vegas Qualifier, Saturday June 30th
-                    10am @ Lefty's Trackside, Marshfield
+                    Cash Cup, Saturday July 21st 10:30am @ 4 Stools Short,
+                    Wisconsin Rapids
                 </a>
             </span>
             <MobileMenu />
