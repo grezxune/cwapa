@@ -11,11 +11,11 @@ const Banner = ({ classes }) => (
                 NEXT EVENT:
                 <a
                     className={classes.attentionBannerLink}
-                    href="https://www.facebook.com/events/439290249830161/"
+                    href="https://www.facebook.com/events/499405403849872/"
                     target="_blank"
                 >
-                    Cash Cup, Saturday July 21st 10:30am @ 4 Stools Short,
-                    Wisconsin Rapids
+                    Halloween Scotch Doubles, Saturday October 20th 9:45am @ 4
+                    Stools Short, Wisconsin Rapids
                 </a>
             </span>
             <MobileMenu />
