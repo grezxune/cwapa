@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import HomePage from '../components/home-page';
 import NotFoundPage from '../components/not-found-page';
@@ -29,6 +29,12 @@ const AppRouter = () => (
     <Router history={history}>
         <div>
             <Switch>
+                <Route
+                    path="*"
+                    component={() =>
+                        (window.location = 'https://league.poolplayers.com/cwi')
+                    }
+                />
                 <PublicRoute
                     path="/"
                     component={HomePage}
